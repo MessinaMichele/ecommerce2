@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ECommerce } from './models/ecommerce.model';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  title = '01_Angular_empty';
+export class AppComponent implements OnInit {
+  data: ECommerce;
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    this.http.get<ECommerce>('https://4200-paolocaruga-01angularem-5efmkm03841.ws-eu97.gitpod.io/')
+      .subscribe(response => {
+        this.data = response;
+      });
+  }
 }
+

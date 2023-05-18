@@ -1,0 +1,11 @@
+<h2>Scarpe</h2>
+<div class="card-deck">
+  <div class="card" *ngFor="let scarpa of scarpe">
+    <img class="card-img-top" >
+    <div class="card-body">
+      <h5 class="card-title">{{ scarpa.nome }}</h5>
+      <p class="card-text">Prezzo: {{ scarpa.prezzo }} €</p>
+      <p class="card-text">Taglia: {{ scarpa.taglia }}</p>
+    </div>
+  </div>
+</div>

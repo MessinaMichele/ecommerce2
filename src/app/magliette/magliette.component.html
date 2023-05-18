@@ -1,0 +1,13 @@
+<!-- src/app/magliette/magliette.component.html -->
+
+<h2>Magliette</h2>
+<div class="card-deck">
+  <div class="card" *ngFor="let m of magliette">
+    <img class="card-img-top" >
+    <div class="card-body">
+      <h5 class="card-title">{{ maglietta.nome }}</h5>
+      <p class="card-text">Prezzo: {{ maglietta.prezzo }} €</p>
+      <p class="card-text">Taglia: {{ maglietta.taglia }}</p>
+    </div>
+  </div>
+</div>
