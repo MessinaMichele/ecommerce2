@@ -1,20 +1,20 @@
 // src/app/models/ecommerce.model.ts
 
-export interface Scarpa {
+export class Scarpa {
     id: number;
     nome: string;
     prezzo: number;
     taglia: string;
   }
   
-  export interface Maglietta {
+  export class Maglietta {
     id: number;
     nome: string;
     prezzo: number;
     taglia: string;
   }
   
-  export interface ECommerce {
+  export class ECommerce {
     scarpe: Scarpa[];
     magliette: Maglietta[];
   }

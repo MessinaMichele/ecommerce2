@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ECommerce } from './models/ecommerce.model';
+import { Observable } from 'rxjs';
 
-export class AppComponent implements OnInit {
-  data: ECommerce;
+export class AppComponent {
+  title = 'ECommerce'
+  URL : "https://my-json-server.typicode.com/paolocarugati/PC_ecommerce/db";
 
-  constructor(private http: HttpClient) {}
+  data : ECommerce;
+  oECommerce : Observable<ECommerce>;
+  
+  constructor(public http: HttpClient) {
+   this.oECommerce = http.get<ECommerce>(this.URL);
+   this.oECommerce.subscribe(d => { alert ("ok!"); this.data = d;} ); 
+   }
+ }
 
-  ngOnInit() {
-    this.http.get<ECommerce>('https://4200-paolocaruga-01angularem-5efmkm03841.ws-eu97.gitpod.io/')
-      .subscribe(response => {
-        this.data = response;
-      });
-  }
-}
 
